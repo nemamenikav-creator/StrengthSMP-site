@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strength SMP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+  <h1>Strength SMP</h1>
+
+  <div id="nav-links">
+    <a onclick="showScreen('home')">Home</a>
+    <a onclick="showScreen('features')">Features</a>
+    <a onclick="showScreen('shop')">Store</a>
+    <a onclick="showScreen('leaderboard')">Leaderboards</a>
+    <a onclick="showScreen('login')" id="login-btn">Login</a>
+  </div>
+
+  <!-- FIXED: moved outside nav-links -->
+  <a class="discord-btn" href="https://discord.gg/WXDhfYF3X5" target="_blank">Discord</a>
+</nav>
+
+<!-- HOME -->
+<section class="screen active" id="home">
+  <div class="content">
+
+    <div class="hero">
+      <h2>STRENGTH <span>SMP</span></h2>
+      <p>Kill players. Gain strength. Become unstoppable.</p>
+<button id="copy-ip-btn" class="btn copy-ip-btn" onclick="copyIP()">Copy IP</button>
+    </div>
+
+    <div class="ip-status-bar">
+      <div class="ip-box">
+        <span class="label">Server IP: </span>
+        <span class="value">strengthsmp.mc-srv.pro</span>
+      </div>
+
+      <div class="status-box">
+        <span class="label">Status</span>
+        <div class="status-pill" id="server-status">Checking...</div>
+        <span class="players" id="player-count">Loading...</span>
+      </div>
+    </div>
+
+    <div class="why-play">
+      <h3>Why Should You Play StrengthSMP?</h3>
+
+      <div class="why-grid">
+        <div class="why-column">
+          <h4>🇬🇧 English</h4>
+
+          <div class="card"><h4>⚔ PvP Progression</h4><p>Kill players and gain strength over time.</p></div>
+          <div class="card"><h4>🟢 24/7 Online</h4><p>Stable server always running.</p></div>
+          <div class="card"><h4>🏆 Competitive System</h4><p>Climb the leaderboard and dominate.</p></div>
+          <div class="card"><h4>👥 Good Community</h4><p>Friendly players and a growing, active community.</p></div>
+          <div class="card"><h4>🛡 Active Staff</h4><p>Helpful staff members online every day to support players.</p></div>
+        </div>
+
+        <div class="why-column">
+          <h4>🇧🇬 Български</h4>
+
+          <div class="card"><h4>⚔ PvP Прогрес</h4><p>Убивай играчи и ставай по-силен с времето.</p></div>
+          <div class="card"><h4>🟢 Онлайн 24/7</h4><p>Сървърът работи постоянно без прекъсване.</p></div>
+          <div class="card"><h4>🏆 Класация</h4><p>Изкачвай се в лидерборда и доминирай.</p></div>
+          <div class="card"><h4>👥 Добра общност</h4><p>Приятелски играчи и активна общност.</p></div>
+          <div class="card"><h4>🛡 Активен екип</h4><p>Полезен staff екип, винаги готов да помага.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="staff-section">
+      <h3>👑 Server Staff</h3>
+
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="https://mc-heads.net/avatar/Kyzen__/100">
+          <h4>Vixzy</h4>
+          <p>Owner</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="https://mc-heads.net/avatar/darckfps_bg1/100">
+          <h4>DarkFPS</h4>
+          <p>Co-Owner</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="screen" id="features">
+  <div class="content">
+    <h2>FEATURES</h2>
+    <div class="cards">
+      <div class="card">⚔ PvP System</div>
+      <div class="card">💰 Economy</div>
+      <div class="card">🏆 Leaderboards</div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="shop">
+  <div class="store-title">STORE</div>
+  <div class="store-horizontal-line"></div>
+
+  <div class="store-main">
+    <div class="store-column">
+      <div class="section-title">RANKS</div>
+      <div class="item vip" onclick="buy('VIP Rank','5€')">VIP Rank <span>5€</span></div>
+      <div class="divider"></div>
+      <div class="item vipplus" onclick="buy('VIP+ Rank','7.50€')">VIP+ Rank <span>7.50€</span></div>
+      <div class="divider"></div>
+      <div class="item strength" onclick="buy('Strength Rank','10€')">Strength Rank <span>10€</span></div>
+      <div class="divider"></div>
+      <div class="item strengthplus" onclick="buy('Strength+ Rank','12.50€')">Strength+ Rank <span>12.50€</span></div>
+    </div>
+
+    <div class="store-vertical-line"></div>
+
+    <div class="store-column">
+      <div class="section-title">KEYS</div>
+      <div class="item" onclick="buy('VIP Key','1€')">Spawner key <span>1.50€</span></div>
+      <div class="divider"></div>
+      <div class="item" onclick="buy('VIP+ Key','1.50€')">VIP+ Key <span>1.50€</span></div>
+      <div class="divider"></div>
+      <div class="item" onclick="buy('Strength Key','2€')">Strength Key <span>2€</span></div>
+      <div class="divider"></div>
+      <div class="item" onclick="buy('Strength+ Key','2.50€')">Strength+ Key <span>2.50€</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="leaderboard">
+  <div class="content">
+    <h2>LEADERBOARDS</h2>
+
+    <div class="lb-container">
+
+      <div class="lb-box">
+        <h3>☠ Deaths</h3>
+        <div id="deaths-list"></div>
+      </div>
+
+      <div class="lb-box">
+        <h3>⚔ Kills</h3>
+        <div id="kills-list"></div>
+      </div>
+
+      <div class="lb-box">
+        <h3>💰 Money</h3>
+        <div id="money-list"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="login">
+  <div class="content">
+    <h2>LOGIN</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <div>
+      <button class="btn btn-primary" onclick="login()">Login</button>
+      <button class="btn" onclick="register()">Register</button>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<div id="toast">IP Copied!</div>
+
+<div class="site-dev">
+  Site-DEV: nema_znacka1784
+</div>
+
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
